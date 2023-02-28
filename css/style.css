@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 4em;
+  line-height: 1;
+}
+
+.game {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex: 0 1 calc(100% / 4 - 10px); */
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 100px;
+  height: 100px;
+  color: transparent;
+  background-color: rgb(138, 131, 211);
+  font-size: 42px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, transform .15s;
+}
+
+.card.open {
+  background-color: rgb(211, 179, 131);
+  color: black;
+}
+
+.card.success {
+  background-color: rgb(131, 211, 151);
+  color: black;
+  cursor: auto;
+  transform: scale(.95);
+}
+
+.timer {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 5em;
+  line-height: 1;
+}
+
+/* fоrm */
+.popup__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.popup__wrap-doublegame {
+  background-color: rgba(0, 0, 0, .7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.form,
+.btn-doublegame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.form__text {
+  display: block;
+  text-align: center;
+}
+
+.form__input,
+.form__btn {
+  border-radius: 50px;
+  max-width: 150px;
+  width: max-content;
+  padding: 5px 10px;
+}
+
+.form__input {
+  margin-bottom: 10px;
+}
+
+.form__btn {
+  display: inline-block;
+  background-color: rgb(138, 131, 211);
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.btn-doublegame {
+  border-radius: 100px;
+  border-color: transparent;
+  padding: 25px 54px;
+  cursor: pointer;
+  color: black;
+  background: linear-gradient(180deg, #46F4DB 27.08%, #57D272 100%);
+  font-size: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.btn-doublegame--active,
+.popup__wrap-doublegame--acive {
+  opacity: 1;
+  visibility: visible;
+}
